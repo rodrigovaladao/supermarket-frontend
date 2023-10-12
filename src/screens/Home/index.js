@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 import { Button, Input, ListCard } from "../../components";
+import { SAVE_USERNAME_PATH } from "../../services/constants";
 
 export const HomeScreen = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export const HomeScreen = () => {
       alert("User name should have at least 3 characters");
       return;
     }
-    localStorage.setItem("@supermarket:username", userName);
+    localStorage.setItem(SAVE_USERNAME_PATH, userName);
     navigate("/list");
   };
 
